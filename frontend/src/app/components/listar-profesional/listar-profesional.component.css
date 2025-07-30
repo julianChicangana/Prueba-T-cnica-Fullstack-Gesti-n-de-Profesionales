@@ -1,0 +1,4 @@
+.container { padding: 1rem; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 0.5rem; border: 3px solid #4602a5; }
+.search-bar { margin-bottom: 1rem; }

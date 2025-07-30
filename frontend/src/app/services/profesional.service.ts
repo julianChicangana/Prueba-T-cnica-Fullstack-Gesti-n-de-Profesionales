@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProfesionalService {
-  private apiUrl = 'http://localhost:8000/profesionales'; // Asegúrate que esta URL coincide con tu backend
+  private apiUrl = 'http://localhost:8000/profesionales';
 
   constructor(private http: HttpClient) {}
 
@@ -15,19 +15,19 @@ export class ProfesionalService {
     return this.http.get<Profesional[]>(this.apiUrl);
   }
 
-  getProfesional(id: number): Observable<Profesional> {
-    return this.http.get<Profesional>(`${this.apiUrl}/${id}`);
-  }
-
   crearProfesional(profesional: Profesional): Observable<Profesional> {
     return this.http.post<Profesional>(this.apiUrl, profesional);
+  }
+
+  getProfesional(id: number): Observable<Profesional> {
+    return this.http.get<Profesional>(`${this.apiUrl}/${id}`);
   }
 
   actualizarProfesional(id: number, profesional: Profesional): Observable<Profesional> {
     return this.http.put<Profesional>(`${this.apiUrl}/${id}`, profesional);
   }
 
-  eliminarProfesional(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+  eliminarProfesional(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

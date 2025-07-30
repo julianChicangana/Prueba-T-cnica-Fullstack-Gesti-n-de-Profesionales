@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { RouterModule, Router } from '@angular/router';
 import { ProfesionalService } from '../../services/profesional.service';
 import { Profesional } from '../../models/profesional.model';
-import { Router } from '@angular/router';
 
 @Component({
+  standalone: true,
+  imports: [CommonModule, FormsModule, RouterModule],
   selector: 'app-listar-profesionales',
   templateUrl: './listar-profesionales.component.html',
-  styleUrls: ['./listar-profesionales.component.css']
+  styleUrls: ['./listar-profesional.component.css']
 })
 export class ListarProfesionalesComponent implements OnInit {
   profesionales: Profesional[] = [];
+  filtro: string = '';
 
   constructor(
     private profesionalService: ProfesionalService,
@@ -17,29 +22,24 @@ export class ListarProfesionalesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.obtenerProfesionales();
+    this.profesionalService.getProfesionales().subscribe(data => this.profesionales = data);
   }
 
-  obtenerProfesionales(): void {
-    this.profesionalService.getProfesionales().subscribe({
-      next: (data) => this.profesionales = data,
-      error: (err) => console.error('Error al obtener profesionales:', err)
-    });
+  profesionalesFiltrados(): Profesional[] {
+    return this.profesionales.filter(p =>
+      p.nombre.toLowerCase().includes(this.filtro.toLowerCase()) ||
+      p.especialidad.toLowerCase().includes(this.filtro.toLowerCase())
+    );
   }
 
-  editar(id: number): void {
-    this.router.navigate(['/editar', id]);
+  editar(id?: number): void {
+    if (id !== undefined) this.router.navigate(['/editar', id]);
   }
 
-  eliminar(id: number): void {
-    if (confirm('¿Estás seguro de que deseas eliminar este profesional?')) {
-      this.profesionalService.eliminarProfesional(id).subscribe({
-        next: () => {
-          alert('Profesional eliminado');
-          this.obtenerProfesionales();
-        },
-        error: (err) => console.error('Error al eliminar profesional:', err)
-      });
+  eliminar(id?: number): void {
+    if (id !== undefined && confirm('¿Eliminar profesional?')) {
+      this.profesionalService.eliminarProfesional(id).subscribe(() => this.ngOnInit());
     }
   }
 }
+

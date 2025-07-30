@@ -1,0 +1,7 @@
+this.profesionalService.getProfesionales().subscribe({
+  next: (data) => {
+    console.log('Datos de la API:', data);
+    this.profesionales = data;
+  },
+  error: (err) => console.error('Error al obtener profesionales:', err)
+});

@@ -4,5 +4,5 @@ export interface Profesional {
   apellido: string;
   especialidad: string;
   email: string;
-  telefono?: string;
+  telefono: string;
 }

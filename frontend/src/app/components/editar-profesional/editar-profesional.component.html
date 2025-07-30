@@ -1,1 +1,33 @@
-<p>editar-profesional works!</p>
+<div class="container">
+  <h2>Editar Profesional</h2>
+
+  <form (ngSubmit)="actualizar()" #profForm="ngForm">
+    <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" [(ngModel)]="profesional.nombre" name="nombre" required />
+    </div>
+
+    <div class="form-group">
+      <label>Apellido</label>
+      <input type="text" [(ngModel)]="profesional.apellido" name="apellido" required />
+    </div>
+
+    <div class="form-group">
+      <label>Especialidad</label>
+      <input type="text" [(ngModel)]="profesional.especialidad" name="especialidad" required />
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" [(ngModel)]="profesional.email" name="email" required />
+    </div>
+
+    <div class="form-group">
+      <label>Teléfono</label>
+      <input type="text" [(ngModel)]="profesional.telefono" name="telefono" required />
+    </div>
+
+    <button type="submit" [disabled]="!profForm.valid">Actualizar</button>
+    <button type="button" (click)="cancelar()">Cancelar</button>
+  </form>
+</div>

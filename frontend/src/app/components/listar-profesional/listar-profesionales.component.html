@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>Listado de Profesionales</h2>
+
+  <div class="search-bar">
+    <input [(ngModel)]="filtro" placeholder="Buscar por nombre o especialidad" />
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Especialidad</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let profesional of profesionalesFiltrados()">
+        <td>{{ profesional.nombre }}</td>
+        <td>{{ profesional.apellido }}</td>
+        <td>{{ profesional.especialidad }}</td>
+        <td>{{ profesional.email }}</td>
+        <td>{{ profesional.telefono }}</td>
+        <td>
+         <button (click)="editar(profesional.id)">Editar</button>
+         <button (click)="eliminar(profesional.id)">Eliminar</button>
+        </td>
+      </tr>
+      <!-- Si no hay datos, mostrar mensaje -->
+      <tr *ngIf="profesionalesFiltrados().length === 0">
+        <td colspan="6" style="text-align:center;">No hay profesionales para mostrar</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="acciones">
+    <button routerLink="/crear">➕ Crear Nuevo Profesional</button>
+  </div>
+</div>

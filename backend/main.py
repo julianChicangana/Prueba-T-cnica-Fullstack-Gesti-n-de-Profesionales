@@ -1,16 +1,17 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers import profesionales
+from routers.profesionales import router as profesionales_router  # ✅ IMPORT CORRECTO
 
 app = FastAPI()
 
-#CORS para permitir conexión con Angular
+# CORS para que Angular pueda acceder
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  #se puedes restringir esto luego
+    allow_origins=["http://localhost:4200"],  # o "*"
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-app.include_router(profesionales.router)
+# Incluimos las rutas
+app.include_router(profesionales_router)
