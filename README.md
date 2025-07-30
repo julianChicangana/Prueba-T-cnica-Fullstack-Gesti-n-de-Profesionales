@@ -1,4 +1,4 @@
-####Prueba Técnica Fullstack: Gestión de Profesionales
+#### Prueba Técnica Fullstack: Gestión de Profesionales
 (Python, Angular, PostgreSQL)
 
 La idea es desarrollar una aplicación CRUD completa con funcionalidad de filtrado utilizando
@@ -7,7 +7,7 @@ Objetivo
 Desarrollar una aplicación que permita gestionar una lista de profesionales.
 
 
-####BASE DE DATOS: 
+### BASE DE DATOS: 
 
 la base de datos fue realizada utilizando Postgres con los siguientes campos:
 ```bash
