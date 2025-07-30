@@ -33,3 +33,28 @@ create table profesional (
 )
 ```
 
+#### API
+
+en este caso se debe crear el entorno virual
+
+```bash
+
+python -m venv venv
+
+```
+
+realizamos la instalacion de las dependencias y procedemos a activar el entorno virtual
+
+```bash
+.\venv\Scripts\Activate.ps1
+
+```
+
+luego ejecutamos el servidos FastAPI 
+
+```bash 
+
+uvicorn main:app --reload
+
+```
+
