@@ -33,6 +33,24 @@ create table profesional (
 )
 ```
 
+#### INSERTAR DATOS
+
+```bash
+
+INSERT INTO profesional (nombre, apellido, especialidad, email, telefono) VALUES
+('Ana', 'Gómez', 'Cardiología', 'ana.gomez@example.com', '3001234567'),
+('Luis', 'Martínez', 'Pediatría', 'luis.martinez@example.com', '3012345678'),
+('María', 'López', 'Neurología', 'maria.lopez@example.com', '3023456789'),
+('Jorge', 'Pérez', 'Dermatología', 'jorge.perez@example.com', '3034567890'),
+('Laura', 'Ramírez', 'Ginecología', 'laura.ramirez@example.com', '3045678901'),
+('Carlos', 'Torres', 'Oncología', 'carlos.torres@example.com', '3056789012'),
+('Diana', 'Morales', 'Psiquiatría', 'diana.morales@example.com', '3067890123'),
+('Fernando', 'Castillo', 'Oftalmología', 'fernando.castillo@example.com', '3078901234'),
+('Patricia', 'Vargas', 'Reumatología', 'patricia.vargas@example.com', '3089012345'),
+('Andrés', 'Herrera', 'Traumatología', 'andres.herrera@example.com', '3090123456');
+
+
+```
 #### API
 
 en este caso se debe crear el entorno virual
@@ -57,4 +75,24 @@ luego ejecutamos el servidos FastAPI
 uvicorn main:app --reload
 
 ```
+
+#### PARA EL FRONTEND
+
+se debe estar en la carpeta del frontend 
+
+```bash
+
+cd frontend
+
+```
+
+#### ejecutamos
+
+```bash
+
+ng serve --open
+
+````
+
+#### CRUD ---> JULIAN ALEJANDRO CHICANGANA PALECHOR
 
