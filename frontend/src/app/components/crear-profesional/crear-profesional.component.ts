@@ -9,10 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./crear-profesional.component.css']
 })
 export class CrearProfesionalComponent {
-    profesional: Profesional = {
+  profesional: Profesional = {
     nombre: '',
-    profesion: '',
-    correo: ''
+    apellido: '',
+    especialidad: '',
+    email: '',
+    telefono: ''
   };
 
   constructor(
@@ -21,7 +23,13 @@ export class CrearProfesionalComponent {
   ) {}
 
   guardar(): void {
-    if (!this.profesional.nombre || !this.profesional.profesion || !this.profesional.correo) {
+    if (
+      !this.profesional.nombre ||
+      !this.profesional.apellido ||
+      !this.profesional.especialidad ||
+      !this.profesional.email ||
+      !this.profesional.telefono
+    ) {
       alert('Todos los campos son obligatorios');
       return;
     }

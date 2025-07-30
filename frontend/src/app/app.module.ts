@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-// Importa tus componentes aquí
 import { CrearProfesionalComponent } from './components/crear-profesional/crear-profesional.component';
 import { EditarProfesionalComponent } from './components/editar-profesional/editar-profesional.component';
 import { ListarProfesionalesComponent } from './components/listar-profesional/listar-profesional.component';

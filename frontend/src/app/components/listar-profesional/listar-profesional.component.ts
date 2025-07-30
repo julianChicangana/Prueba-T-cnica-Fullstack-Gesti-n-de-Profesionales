@@ -21,7 +21,7 @@ export class ListarProfesionalesComponent implements OnInit {
   }
 
   obtenerProfesionales(): void {
-    this.profesionalService.obtenerProfesionales().subscribe({
+    this.profesionalService.getProfesionales().subscribe({
       next: (data) => this.profesionales = data,
       error: (err) => console.error('Error al obtener profesionales:', err)
     });
@@ -36,7 +36,7 @@ export class ListarProfesionalesComponent implements OnInit {
       this.profesionalService.eliminarProfesional(id).subscribe({
         next: () => {
           alert('Profesional eliminado');
-          this.obtenerProfesionales(); // recargar lista
+          this.obtenerProfesionales();
         },
         error: (err) => console.error('Error al eliminar profesional:', err)
       });
