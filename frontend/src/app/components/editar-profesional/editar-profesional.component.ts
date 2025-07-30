@@ -13,7 +13,7 @@ import { Profesional } from '../../models/profesional.model';
   styleUrls: ['./editar-profesional.component.css']
 })
 export class EditarProfesionalComponent implements OnInit {
-  profesional: Profesional = { id: 0,nombre: '', apellido: '', especialidad: '', email: '', telefono: '' };
+  profesional: Profesional = { id_persona: 0,nombre: '', apellido: '', especialidad: '', email: '', telefono: '' };
 
   constructor(
     private route: ActivatedRoute,
@@ -22,13 +22,13 @@ export class EditarProfesionalComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.profesionalService.getProfesional(id).subscribe(data => this.profesional = data);
+    const id_persona = Number(this.route.snapshot.paramMap.get('id_persona'));
+    this.profesionalService.getProfesional(id_persona).subscribe(data => this.profesional = data);
   }
 
   actualizar(): void {
-    if (!this.profesional.id) return;
-    this.profesionalService.actualizarProfesional(this.profesional.id, this.profesional)
+    if (!this.profesional.id_persona) return;
+    this.profesionalService.actualizarProfesional(this.profesional.id_persona, this.profesional)
       .subscribe(() => {
         alert('Profesional actualizado');
         this.router.navigate(['/']);

@@ -19,15 +19,15 @@ export class ProfesionalService {
     return this.http.post<Profesional>(this.apiUrl, profesional);
   }
 
-  getProfesional(id: number): Observable<Profesional> {
-    return this.http.get<Profesional>(`${this.apiUrl}/${id}`);
+  getProfesional(id_persona: number): Observable<Profesional> {
+    return this.http.get<Profesional>(`${this.apiUrl}/${id_persona}`);
   }
 
-  actualizarProfesional(id: number, profesional: Profesional): Observable<Profesional> {
-    return this.http.put<Profesional>(`${this.apiUrl}/${id}`, profesional);
+  actualizarProfesional(id_persona: number, profesional: Profesional): Observable<Profesional> {
+    return this.http.put<Profesional>(`${this.apiUrl}/${id_persona}`, profesional);
   }
 
-  eliminarProfesional(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  eliminarProfesional(id_persona: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id_persona}`);
   }
 }

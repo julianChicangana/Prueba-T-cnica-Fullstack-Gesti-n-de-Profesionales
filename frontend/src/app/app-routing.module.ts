@@ -7,8 +7,8 @@ import { EditarProfesionalComponent } from './components/editar-profesional/edit
 
 const routes: Routes = [
   { path: '', component: ListarProfesionalesComponent },
-  { path: 'crear', component: CrearProfesionalComponent },
-  { path: 'editar/:id', component: EditarProfesionalComponent },
+  { path: 'editar/:id_persona', component: EditarProfesionalComponent },
+  { path: 'crear', component: CrearProfesionalComponent }
 ];
 
 @NgModule({

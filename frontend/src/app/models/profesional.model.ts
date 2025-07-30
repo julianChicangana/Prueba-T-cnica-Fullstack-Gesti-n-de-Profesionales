@@ -1,5 +1,5 @@
 export interface Profesional {
-  id?: number;
+  id_persona?: number;
   nombre: string;
   apellido: string;
   especialidad: string;

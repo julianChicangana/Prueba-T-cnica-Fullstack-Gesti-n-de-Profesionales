@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ListarProfesionalesComponent } from './components/listar-profesional/listar-profesional.component';
 
 @Component({
   standalone: true,
-  imports: [RouterModule, ListarProfesionalesComponent],
+  imports: [RouterModule],
   selector: 'app-root',
   template: `
     <h1 style="color: darkblue; text-align: center;">CRUD</h1>

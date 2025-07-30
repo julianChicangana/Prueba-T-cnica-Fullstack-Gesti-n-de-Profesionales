@@ -5,3 +5,12 @@ this.profesionalService.getProfesionales().subscribe({
   },
   error: (err) => console.error('Error al obtener profesionales:', err)
 });
+
+editar(id_persona: number): void {
+  console.log('ID recibido para editar:', id_persona);
+  if (id_persona === undefined || id_persona === null) {
+    console.error('ID inválido:', id_persona);
+    return;
+  }
+  this.router.navigate(['/editar', id_persona]);
+}
