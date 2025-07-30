@@ -10,7 +10,7 @@ Desarrollar una aplicación que permita gestionar una lista de profesionales.
 BASE DE DATOS: 
 
 la base de datos fue realizada utilizando Postgres con los siguientes campos:
-
+```bash
 ○ id (SERIAL PRIMARY KEY)
 ○ nombre (VARCHAR)
 ○ apellido (VARCHAR)
@@ -18,10 +18,11 @@ la base de datos fue realizada utilizando Postgres con los siguientes campos:
 ○ email (VARCHAR, UNIQUE)
 ○ telefono (VARCHAR, opcional)
 
-```bash
+-----------------------------------------
+
 create database profesionales;
 
-
+-----------------------------------------
 create table profesional (
   id_persona serial primary key,
   nombre varchar(100) not null,
